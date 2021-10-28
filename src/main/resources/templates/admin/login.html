@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MySysTem | Log in</title>
+
+    <link rel="shortcut icon" th:href="@{/admin/dist/img/favicon.ico}"/>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" th:href="@{/admin/dist/css/font-awesome.min.css}">
+    <!-- Ionicons -->
+    <link rel="stylesheet" th:href="@{/admin/dist/css/ionicons.min.css}">
+    <!-- Theme style -->
+    <link rel="stylesheet" th:href="@{/admin/dist/css/adminlte.min.css}">
+</head>
+<body class="hold-transition login-page">
+<div class="login-box">
+    <div class="login-logo">
+        <a href="#"><b>MySysTem</b></a>
+        <img th:src="@{/admin/dist/img/user.jpg}" class="img-circle elevation-2" alt="User Image">
+    </div>
+    <!-- /.login-logo -->
+    <div class="card">
+        <div class="card-body login-card-body">
+            <p class="login-box-msg">Sign in</p>
+            <p class="float-sm-right">
+                <a href="forgot-password.html">注册</a>
+
+
+            <form action="http://192.168.5.231:11000/HeNan_MerchantManagementSystem_Core/jzt/api/ent" method="post">
+                <div class="input-group mb-3">
+                    <input type="email" class="form-control" placeholder="Email">
+                </div>
+                <div class="input-group mb-3">
+                    <input type="password" class="form-control" placeholder="Password">
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <input type="text" class="form-control" name="verifyCode" placeholder="请输入验证码" required="true">
+                    </div>
+                    <div class="col-6">
+                        <img alt="单击图片刷新！" class="pointer" th:src="@{/common/kaptcha}"
+                             onclick="this.src='/common/kaptcha?d='+new Date()*1">
+                    </div>
+                </div>
+                <div class="form-group has-feedback"></div>
+                <div class="row">
+                    <div class="col-8">
+                    </div>
+                    <div class="col-4">
+                        <button type="submit" class="btn btn-primary btn-block btn-flat">登录
+                        </button>
+                    </div>
+                </div>
+            </form>
+
+
+
+            <p class="mb-2">
+                <a href="forgot-password.html">忘记密码</a>
+            </p>
+        </div>
+        <!-- /.login-card-body -->
+    </div>
+</div>
+<!-- /.login-box -->
+
+<!-- jQuery -->
+<script th:src="@{admin/plugins/jquery/jquery.min.js}"></script>
+<!-- Bootstrap 4 -->
+<script th:src="@{/admin/plugins/bootstrap/js/bootstrap.bundle.min.js}"></script>
+<!-- AdminLTE App -->
+<script th:src="@{/admin/dist/js/adminlte.min.js}"></script>
+</body>
+</html>

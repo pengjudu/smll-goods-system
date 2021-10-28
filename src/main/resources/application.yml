@@ -1,0 +1,19 @@
+server:
+  port: 9099
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    name: newbee-mall-datasource
+    url: jdbc:mysql://localhost:3306/new_mall_schema?useUnicode=true&serverTimezone=Asia/Shanghai&characterEncoding=utf8&autoReconnect=true&useSSL=false&allowMultiQueries=true
+    username: root
+    password: pjdu1234
+    hikari:
+      pool-name: hikariCP
+      minimum-idle: 5
+      maximum-pool-size: 15
+      auto-commit: true
+      idle-timeout: 30000
+      max-lifetime: 30000
+      connection-test-query: SELECT 1
+      connection-timeout: 30000
+
