@@ -21,7 +21,7 @@ public class CommWebConfig  extends WebMvcConfigurerAdapter{
 		// TODO Auto-generated method stub
 		registry.addInterceptor(new AdminLoginInterceptor()).addPathPatterns("/**")
 				//登录接口不用通过拦截器否则会形成死循环，因为第一次登录没有token信息会一直跳转到登录接口
-				.excludePathPatterns("/admin/first");//admin/login
+				.excludePathPatterns("/admin/login").excludePathPatterns("/commom/*");//admin/login
 		super.addInterceptors(registry);
 	}
 	
