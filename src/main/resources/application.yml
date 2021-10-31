@@ -2,7 +2,7 @@ server:
   port: 9099
 spring:
   datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
+    driver-class-name: com.mysql.jdbc.Driver
     name: newbee-mall-datasource
     url: jdbc:mysql://localhost:3306/new_mall_schema?useUnicode=true&serverTimezone=Asia/Shanghai&characterEncoding=utf8&autoReconnect=true&useSSL=false&allowMultiQueries=true
     username: root
