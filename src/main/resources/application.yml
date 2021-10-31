@@ -16,4 +16,6 @@ spring:
       max-lifetime: 30000
       connection-test-query: SELECT 1
       connection-timeout: 30000
-
+mybatis:
+  mapper-locations: classpath:mapping/*.xml
+  type-aliases-package: cn.com.goods.model

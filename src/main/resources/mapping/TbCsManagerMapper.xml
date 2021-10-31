@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.com.goods.mapper.TbCsManagerMapper" >
+  <resultMap id="BaseResultMap" type="cn.com.goods.model.TbCsManager" >
+    <result column="user_id" property="userId" jdbcType="VARCHAR" />
+    <result column="user_name" property="userName" jdbcType="VARCHAR" />
+    <result column="state" property="state" jdbcType="CHAR" />
+    <result column="email" property="email" jdbcType="VARCHAR" />
+    <result column="phone" property="phone" jdbcType="VARCHAR" />
+    <result column="limit_code" property="limitCode" jdbcType="VARCHAR" />
+    <result column="create_date" property="createDate" jdbcType="VARCHAR" />
+    <result column="password" property="password" jdbcType="VARCHAR" />
+    <result column="password_last" property="passwordLast" jdbcType="VARCHAR" />
+  </resultMap>
+  <insert id="insert" parameterType="cn.com.goods.model.TbCsManager" >
+    insert into tb_cs_manager (user_id, user_name, state, 
+      email, phone, limit_code, 
+      create_date, password, password_last
+      )
+    values (#{userId,jdbcType=VARCHAR}, #{userName,jdbcType=VARCHAR}, #{state,jdbcType=CHAR}, 
+      #{email,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{limitCode,jdbcType=VARCHAR}, 
+      #{createDate,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, #{passwordLast,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="cn.com.goods.model.TbCsManager" >
+    insert into tb_cs_manager
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="userId != null" >
+        user_id,
+      </if>
+      <if test="userName != null" >
+        user_name,
+      </if>
+      <if test="state != null" >
+        state,
+      </if>
+      <if test="email != null" >
+        email,
+      </if>
+      <if test="phone != null" >
+        phone,
+      </if>
+      <if test="limitCode != null" >
+        limit_code,
+      </if>
+      <if test="createDate != null" >
+        create_date,
+      </if>
+      <if test="password != null" >
+        password,
+      </if>
+      <if test="passwordLast != null" >
+        password_last,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="userId != null" >
+        #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="userName != null" >
+        #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null" >
+        #{state,jdbcType=CHAR},
+      </if>
+      <if test="email != null" >
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null" >
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="limitCode != null" >
+        #{limitCode,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null" >
+        #{createDate,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null" >
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="passwordLast != null" >
+        #{passwordLast,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="queryManager" resultMap="BaseResultMap">
+    select * from tb_cs_manager where 1=1
+    <if test="userName != null and userName !='' ">
+      and  user_name = #{userName}
+    </if>
+    <if test="password != null and password !='' ">
+      and  password = #{password}
+    </if>
+    <if test="passwordLast != null and passwordLast !='' ">
+      and  password_last = #{passwordLast}
+    </if>
+  </select>
+</mapper>

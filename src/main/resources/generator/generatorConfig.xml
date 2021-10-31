@@ -5,7 +5,7 @@
 <generatorConfiguration>
 	<!-- 数据库驱动:选择你的本地硬盘上面的数据库驱动包 -->
 	<classPathEntry
-		location="C:\Users\pjdu\.m2\repository\com\oracle\ojdbc6\11.2.0.3.0\ojdbc6-11.2.0.3.0.jar" />
+		location="C:\Users\86187\.m2\repository\mysql\mysql-connector-java\8.0.20\mysql-connector-java-8.0.20.jar" />
 	<context id="DB2Tables" targetRuntime="MyBatis3">
 		<commentGenerator>
 			<property name="suppressDate" value="true" />
@@ -14,34 +14,34 @@
 		</commentGenerator>
 		<!--数据库链接URL，用户名、密码 -->
 		<jdbcConnection
-			driverClass="oracle.jdbc.driver.OracleDriver"
-			connectionURL="jdbc:oracle:thin:@192.168.5.70:1521:pep"
-			userId="stlmpay" password="sTl__I6">
+			driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://localhost:3306/new_mall_schema?serverTimezone=UTC"
+			userId="root" password="pjdu1234">
 		</jdbcConnection>
 		<javaTypeResolver>
 			<property name="forceBigDecimals" value="false" />
 		</javaTypeResolver>
 		<!-- 生成模型的包名和位置 -->
 		<javaModelGenerator
-			targetPackage="com.easypay.model"
-			targetProject="SettlementSystem/src/main/java">
+			targetPackage="cn.com.goods.model"
+			targetProject="D:\ideaWork\smll-goods-sysytem\src\main\java">
 			<property name="enableSubPackages" value="true" />
 			<property name="trimStrings" value="true" />
 		</javaModelGenerator>
 		<!-- 生成映射文件的包名和位置 -->
 		<sqlMapGenerator targetPackage="mapping"
-			targetProject="SettlementSystem/src/main/resources">
+			targetProject="D:\ideaWork\smll-goods-sysytem\src\main\resources">
 			<property name="enableSubPackages" value="true" />
 		</sqlMapGenerator>
 		<!-- 生成DAO的包名和位置 -->
 		<javaClientGenerator type="XMLMAPPER"
-			targetPackage="com.easypay.mapper"
-			targetProject="SettlementSystem/src/main/java">
+			targetPackage="cn.com.goods.mapper"
+			targetProject="D:\ideaWork\smll-goods-sysytem\src\main\java">
 			<property name="enableSubPackages" value="true" />
 		</javaClientGenerator>
 
-		<table tableName="df_cs_sys_terminal"
-			domainObjectName="DfCsSysTerminal" enableCountByExample="false"
+		<table tableName="tb_cs_manager"
+			domainObjectName="TbCsManager" enableCountByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false"
 			enableSelectByExample="false" selectByExampleQueryId="false"></table>
 
