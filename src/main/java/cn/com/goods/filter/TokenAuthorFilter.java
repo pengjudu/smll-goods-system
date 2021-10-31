@@ -41,9 +41,11 @@ public class TokenAuthorFilter implements Filter {
 		response.setCharacterEncoding("UTF-8");
 		response.setContentType("application/json; charset=utf-8");
 		// chain.doFilter(req, rep);
-		String token = reqf.getHeader("token");// header方式
-		logger.info("-----------跨域连接器-----------" + token);
 		Message resultInfo = new Message();
+		String token = reqf.getHeader ("token");// header方式
+		logger.info("-----------跨域连接器-----------" + token);
+
+
 
 		boolean isFilter = false;
 		String method = ((HttpServletRequest) request).getMethod();

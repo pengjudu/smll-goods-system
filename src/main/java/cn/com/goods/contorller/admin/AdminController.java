@@ -19,13 +19,13 @@ public class AdminController {
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
 
-    @GetMapping("/login")
-    public String login() {
+    @GetMapping("/first")
+    public String first() {
         System.out.println("hello");
         return "admin/login";
     }
 
-    @RequestMapping(value = "/login")
+    @GetMapping(value = "/login")
     public String login(@RequestParam("loginName") String loginName,
                         @RequestParam("password") String password,
                         @RequestParam("verifyCode") String verifyCode,
@@ -53,8 +53,8 @@ public class AdminController {
         message.setToken(token);
         message.setBody("fff");
         //request.getSession(false);
-        session.setAttribute("user", loginName);
-        return "forward:/home/index";
+        session.setAttribute("token", loginName);
+        return "redirect:/home/index";
     }
 
     @GetMapping({"/logout"})
